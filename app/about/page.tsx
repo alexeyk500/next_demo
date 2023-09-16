@@ -1,12 +1,12 @@
 import React from 'react';
-import {Metadata} from "next";
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About | A500 Next App',
-}
+};
 
 const About: React.FC = () => {
-  return(<></>);
+  return <></>;
 };
 
 export default About;

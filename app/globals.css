@@ -1,6 +1,6 @@
 :root {
   --mainColor: #002033;
-  --grayD3: #D3D3D3;
+  --grayD3: #d3d3d3;
   --gray80: #808080;
   --gray5b: #5b5b5b;
 }
@@ -11,7 +11,8 @@
   margin: 0;
 }
 
-html, body {
+html,
+body {
   max-width: 100vw;
   overflow-x: hidden;
 }

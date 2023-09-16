@@ -1,35 +1,33 @@
 import React from 'react';
-import {Metadata} from "next";
-import Link from "next/link";
-import classes from './Blog.module.css'
+import { Metadata } from 'next';
+import Link from 'next/link';
+import classes from './Blog.module.css';
 
 export const metadata: Metadata = {
   title: 'Blog | A500 Next App',
 };
 
-const getData = async() => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts',{
+const getData = async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
     next: {
-      revalidate: 60
-    }
-  })
-  return response.json()
-}
+      revalidate: 60,
+    },
+  });
+  return response.json();
+};
 
-const Blog = async() => {
+const Blog = async () => {
   const posts = await getData();
   return (
     <div className={classes.container}>
-      <h1>
-        {'Blog page'}
-      </h1>
+      <h1>{'Blog page'}</h1>
       <ul className={classes.list}>
-        {posts.map((post: any, ind: number)=>{
+        {posts.map((post: { id: string; title: string }, ind: number) => {
           return (
             <li key={ind}>
               <Link href={`blog/${post.id}`}>{post.title}</Link>
             </li>
-          )
+          );
         })}
       </ul>
     </div>
