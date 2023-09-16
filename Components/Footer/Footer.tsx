@@ -3,9 +3,9 @@ import classes from './Footer.module.css'
 
 const Footer: React.FC = () => {
   return (
-    <div className={classes.container}>
+    <footer className={classes.container}>
       {'Footer'}
-    </div>
+    </footer>
   );
 };
 

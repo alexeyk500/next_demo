@@ -2,11 +2,11 @@ import React from 'react';
 import classes from './Header.module.css';
 
 const Header: React.FC = () => {
-    return (
-        <div className={classes.container}>
-          {'Footer'}
-        </div>
-    );
+  return (
+    <header className={classes.container}>
+      {'Footer'}
+    </header>
+  );
 };
 
 export default Header;
