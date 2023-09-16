@@ -1,3 +1,10 @@
+:root {
+  --mainColor: #002033;
+  --grayD3: #D3D3D3;
+  --gray80: #808080;
+  --gray5b: #5b5b5b;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

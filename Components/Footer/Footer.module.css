@@ -1,3 +1,12 @@
 .container {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 60px;
+  background-color: lightgray;
+  column-gap: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gray80);
 }
