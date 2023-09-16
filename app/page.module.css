@@ -1,6 +1,11 @@
-.container {
+.content {
   display: flex;
   height: calc(100vh - 120px);
   color: var(--mainColor);
   overflow: hidden;
+  padding: 0 20px;
+}
+
+.container {
+  display: flex;
 }

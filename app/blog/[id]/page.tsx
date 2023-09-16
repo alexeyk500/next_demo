@@ -1,13 +1,15 @@
 import React from 'react';
 import {Metadata} from "next";
 
-export const metadata: Metadata = {
-  title: 'Post | Blog | A500 Next App',
-}
-
 type PropsType = {
   params: {
     id: string
+  }
+}
+
+export const generateMetadata = async ({params: {id}}: PropsType): Promise<Metadata> => {
+  return {
+    title: `Post ${id} | Blog | A500 Next App`,
   }
 }
 
