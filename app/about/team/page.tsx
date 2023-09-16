@@ -2,15 +2,15 @@ import React from 'react';
 import {Metadata} from "next";
 
 export const metadata: Metadata = {
-  title: 'Blog | A500 Next App',
+  title: 'Team | About | A500 Next App',
 }
 
-const Blog = () => {
+const Team: React.FC = () => {
   return (
     <h1>
-      {'Blog page'}
+      {`Team page`}
     </h1>
   );
 };
 
-export default Blog;
+export default Team;
