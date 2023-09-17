@@ -1,6 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
+
 import classes from './AboutLayout.module.css';
+import Link from 'next/link';
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Metadata } from 'next';
+
 import classes from './Post.module.css';
+import { Metadata } from 'next';
 
 type PropsType = {
   params: {
