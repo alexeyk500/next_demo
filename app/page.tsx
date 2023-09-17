@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <h1 className={styles.container}>{'Hello, Next'}</h1>;
+  return <h1 className={styles.container}>{'Hello, Next and A500'}</h1>;
 }
