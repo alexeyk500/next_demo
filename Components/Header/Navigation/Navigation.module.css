@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  column-gap: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray5b);
+}
+
+.active {
+  color: var(--gray3a);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}

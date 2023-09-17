@@ -1,14 +1,19 @@
 import React from 'react';
 
+import Navigation, { NavLinkType } from '@/Components/Header/Navigation/Navigation';
+
 import classes from './Header.module.css';
-import Link from 'next/link';
+
+const links: NavLinkType[] = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'About', href: '/about' },
+];
 
 const Header: React.FC = () => {
   return (
     <header className={classes.container}>
-      <Link href={'/'}>Home</Link>
-      <Link href={'/blog'}>Blog</Link>
-      <Link href={'/about'}>About</Link>
+      <Navigation links={links} />
     </header>
   );
 };
