@@ -1,22 +1,20 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 
-import { PostType } from '@/app/types';
-import { getAllPosts } from '@/utils/getAllPosts';
+import { usePosts } from '@/store/store';
 
-interface IPostSearchProps {
-  setPosts: (posts: PostType[]) => void;
-}
+import { shallow } from 'zustand/shallow';
 
-const PostSearch: React.FC<IPostSearchProps> = ({ setPosts }) => {
+const PostSearch: React.FC = () => {
   const [searchValue, setSearchValue] = useState('');
+  const getPosts = usePosts((state) => state.getPosts, shallow);
+
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
   };
 
   const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const posts = await getAllPosts(searchValue);
-    setPosts(posts);
+    getPosts(searchValue).then();
   };
 
   return (
