@@ -1,3 +1,4 @@
+'use client';
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 
 import { usePosts } from '@/store/store';
