@@ -1,37 +1,33 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
+
+import { PostType } from '@/app/types';
+import Posts from '@/Components/Posts/Posts';
+import PostSearch from '@/Components/PostSearch/PostSearch';
+import { getAllPosts } from '@/utils/getAllPosts';
 
 import classes from './Blog.module.css';
-import { Metadata } from 'next';
-import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Blog | A500 Next App',
-};
+const Blog = () => {
+  const [posts, setPosts] = useState<PostType[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-const getData = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-    next: {
-      revalidate: 60,
-    },
-  });
-  return response.json();
-};
+  useEffect(() => {
+    setIsLoading(true);
+    getAllPosts()
+      .then(setPosts)
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
 
-const Blog = async () => {
-  const posts = await getData();
   return (
     <div className={classes.container}>
       <h1>{'Blog page'}</h1>
-      <ul className={classes.list}>
-        {posts.map((post: { id: string; title: string }, ind: number) => {
-          return (
-            <li key={ind}>
-              <Link href={`blog/${post.id}`}>{post.title}</Link>
-            </li>
-          );
-        })}
-      </ul>
+      <PostSearch setPosts={setPosts} />
+      {isLoading && <h3>Loading...</h3>}
+      <Posts posts={posts} setPosts={setPosts} />
     </div>
   );
 };

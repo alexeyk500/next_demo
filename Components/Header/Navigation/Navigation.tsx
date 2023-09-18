@@ -26,7 +26,7 @@ const Navigation: React.FC<INavigationProps> = ({ links }) => {
           <Link key={ind} className={isActive ? classes.active : ''} href={link.href}>
             {link.label}
           </Link>
-        )
+        );
       })}
     </div>
   );
