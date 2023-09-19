@@ -1,4 +1,5 @@
 import { posts } from '@/app/templates/posts';
+import { PostType } from '@/app/types';
 
 import { NextResponse } from 'next/server';
 
@@ -7,8 +8,8 @@ export const GET = async (req: Request) => {
   const query = searchParams.get('q');
   if (query) {
     return NextResponse.json(
-      posts.reduce((filteredPosts, post) => {
-        if (post.body.toLowerCase().includes(query.toLowerCase())) {
+      posts.reduce((filteredPosts: PostType[], post) => {
+        if (post.body?.toLowerCase().includes(query.toLowerCase())) {
           return filteredPosts.concat(post);
         }
         return filteredPosts;

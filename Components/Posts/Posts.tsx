@@ -23,7 +23,7 @@ const Posts: React.FC = () => {
         <h3>Loading...</h3>
       ) : (
         <ul className={classes.list}>
-          {posts.map((post: { id: string; title: string }, ind: number) => {
+          {posts.map((post, ind: number) => {
             return (
               <li key={ind}>
                 <Link href={`blog/${post.id}`}>{post.title}</Link>
