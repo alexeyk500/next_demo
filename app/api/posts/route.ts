@@ -1,5 +1,5 @@
-import { posts } from '@/app/templates/posts';
-import { PostType } from '@/app/types';
+import { posts } from '@/templates/posts';
+import { PostType } from '@/types/types';
 
 import { NextResponse } from 'next/server';
 

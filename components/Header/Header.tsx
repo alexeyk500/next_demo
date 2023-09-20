@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Navigation, { NavLinkType } from '@/Components/Header/Navigation/Navigation';
+import Navigation, { NavLinkType } from '@/components/Header/Navigation/Navigation';
 
 import classes from './Header.module.css';
 

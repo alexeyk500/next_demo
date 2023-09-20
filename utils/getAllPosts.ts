@@ -1,4 +1,4 @@
-import { PostType } from '@/app/types';
+import { PostType } from '@/types/types';
 
 export const getAllPosts = async (search?: string): Promise<PostType[]> => {
   await new Promise((resolve) => setTimeout(resolve, 1000));

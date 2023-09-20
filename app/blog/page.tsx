@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Posts from '@/Components/Posts/Posts';
-import PostSearch from '@/Components/PostSearch/PostSearch';
+import Posts from '@/components/Posts/Posts';
+import PostSearch from '@/components/PostSearch/PostSearch';
 
 import classes from './Blog.module.css';
 import { Metadata } from 'next';

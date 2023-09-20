@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 32px;
+  align-items: center;
+  row-gap: 32px;
+}

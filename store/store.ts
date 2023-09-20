@@ -1,4 +1,4 @@
-import { PostType } from '@/app/types';
+import { PostType } from '@/types/types';
 import { getAllPosts } from '@/utils/getAllPosts';
 
 import { create } from 'zustand';

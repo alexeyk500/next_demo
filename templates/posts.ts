@@ -1,4 +1,4 @@
-import { PostType } from '@/app/types';
+import { PostType } from '@/types/types';
 
 export const posts: PostType[] = [
   {
