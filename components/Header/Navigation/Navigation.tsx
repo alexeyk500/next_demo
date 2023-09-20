@@ -5,6 +5,7 @@ import React from 'react';
 import classes from './Navigation.module.css';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { signOut, useSession } from 'next-auth/react';
 
 export type NavLinkType = {
   label: string;
@@ -17,6 +18,13 @@ interface INavigationProps {
 
 const Navigation: React.FC<INavigationProps> = ({ links }) => {
   const path = usePathname();
+  const session = useSession();
+
+  const isProfilePage = path.split('/')[1] === 'profile';
+
+  const onClickSignOut = async () => {
+    signOut({ callbackUrl: '/' }).then();
+  };
 
   return (
     <div className={classes.container}>
@@ -26,8 +34,22 @@ const Navigation: React.FC<INavigationProps> = ({ links }) => {
           <Link key={ind} className={isActive ? classes.active : ''} href={link.href}>
             {link.label}
           </Link>
-        )
+        );
       })}
+      {session?.data && (
+        <Link key={'profile'} className={isProfilePage ? classes.active : ''} href={'/profile'}>
+          {'Profile'}
+        </Link>
+      )}
+      {session?.data ? (
+        <Link key={'logOut'} href={'#'} onClick={onClickSignOut}>
+          {'Sign Out'}
+        </Link>
+      ) : (
+        <Link key={'signIn'} href={'/signin'}>
+          {'Sign In'}
+        </Link>
+      )}
     </div>
   );
 };
