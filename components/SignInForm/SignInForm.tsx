@@ -5,14 +5,7 @@ import './lastPassFix.css';
 
 import classes from './SignInForm.module.css';
 import { useRouter } from 'next/navigation';
-import { signIn } from 'next-auth/react';
-
-type SignInResult = {
-  error: string | null;
-  status: string;
-  ok: boolean;
-  url: string;
-};
+import { signIn, SignInResponse } from 'next-auth/react';
 
 const SignInForm = () => {
   const router = useRouter();
@@ -24,7 +17,7 @@ const SignInForm = () => {
       email: formData.get('email'),
       password: formData.get('password'),
       redirect: false,
-    })) as SignInResult;
+    })) as SignInResponse;
     if (res && !res.error) {
       router.push('/profile');
     } else {
