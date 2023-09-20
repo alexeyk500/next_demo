@@ -1,16 +1,15 @@
-import { Awaitable, User } from 'next-auth';
-import { OAuthConfig } from 'next-auth/providers';
-import Credentials, { CredentialsConfig } from 'next-auth/providers/credentials';
+import { User } from 'next-auth';
+import Credentials from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
 
-export const authConfig: { pages: {}; providers: (OAuthConfig<any> | CredentialsConfig<any>)[] } = {
+export const authConfig: { pages: {}; providers: any[] } = {
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
     Credentials({
-      async authorize(credentials: any): Awaitable<User | null> {
+      async authorize(credentials: any) {
         console.log('credentials', credentials);
         if (!credentials?.email || !credentials.password) {
           return null;

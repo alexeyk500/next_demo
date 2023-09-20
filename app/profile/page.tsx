@@ -20,7 +20,6 @@ type SessionType = {
 
 const Profile: React.FC = async () => {
   const session = (await getServerSession(authConfig as any)) as SessionType;
-  console.log('session', session);
 
   return (
     <div className={classes.container}>
