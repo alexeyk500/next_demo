@@ -1,8 +1,6 @@
 'use client';
 import React, { FormEvent } from 'react';
 
-import './lastPassFix.css';
-
 import classes from './SignInForm.module.css';
 import { useRouter } from 'next/navigation';
 import { signIn, SignInResponse } from 'next-auth/react';
